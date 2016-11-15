@@ -1,0 +1,3 @@
+sample/mybatis/domain/City.class
+sample/mybatis/mapper/CityMapper.class
+sample/mybatis/SampleMapperApplication.class

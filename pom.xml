@@ -11,6 +11,7 @@
     <modules>
         <module>sbd-hello</module>
         <module>sbd-tomcat-jsp</module>
+        <module>sbd-spring-mybatis-annotation</module>
     </modules>
 
 

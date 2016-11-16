@@ -13,6 +13,8 @@
         <module>sbd-tomcat-jsp</module>
         <module>sbd-mybatis-annotation</module>
         <module>sbd-mybatis-xml</module>
+        <module>sbd-mybatis-without-mybatis-spring-boot</module>
+        <module>sbd-mybatis-java-config-transaction</module>
     </modules>
 
 

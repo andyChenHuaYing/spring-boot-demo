@@ -35,14 +35,18 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... strings) {
         System.out.println(cityService.findCityByState("CA"));
+        testTransaction();
+    }
+
+    private void testTransaction() {
         try {
-            hotelService.addHotel();
+            this.hotelService.addHotel();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            int hotelCount = hotelService.selectHotelCount();
-            System.out.println(hotelCount);
+        }finally {
+            System.out.println("======>>" + this.hotelService.selectHotelCount());
         }
     }
+
 
 }

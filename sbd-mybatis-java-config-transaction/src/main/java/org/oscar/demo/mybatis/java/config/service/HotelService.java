@@ -1,11 +1,10 @@
-package org.oscar.demo.mybatis.service;
+package org.oscar.demo.mybatis.java.config.service;
 
-import org.oscar.demo.mybatis.mapper.HotelMapper;
-import org.oscar.demo.mybatis.model.Hotel;
+import org.oscar.demo.mybatis.java.config.mapper.HotelMapper;
+import org.oscar.demo.mybatis.java.config.model.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.sql.SQLException;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Description:
@@ -15,6 +14,7 @@ import java.sql.SQLException;
  * Version: 1.0-SNAPSHOT
  */
 @Service
+@Transactional
 public class HotelService {
 
     @Autowired
@@ -23,14 +23,14 @@ public class HotelService {
     /**
      * 测试事务是否起作用
      */
-    public void addHotel() throws SQLException {
+    public void testTransaction() {
 
         for (int i = 0; i < 10; i++) {
             this.hotelMapper.addHotel(new Hotel(i, "GeLin,No:" + (i + 1), "YuHuaTai east road, No: " + (i + 1), "400" + (i + 2)));
         }
 
-        throw new RuntimeException("Throw RuntimeException manually for test transaction.");
-
+        //主动抛异常，观察前面插入的十条数据有没有回滚
+        throw new RuntimeException("Test transaction.");
     }
 
     public int selectHotelCount() {

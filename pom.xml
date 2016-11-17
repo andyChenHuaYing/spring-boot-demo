@@ -15,6 +15,7 @@
         <module>sbd-mybatis-xml</module>
         <module>sbd-mybatis-without-mybatis-spring-boot</module>
         <module>sbd-mybatis-java-config-transaction</module>
+        <module>sbd-logback</module>
     </modules>
 
 

@@ -1,7 +1,8 @@
-package org.oscar.demo.mybatis.anno.auto.scanner.mapper;
+package org.oscar.demo.mybatis.anno.mapper;
 
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.oscar.demo.mybatis.anno.config.MyBatis;
 import org.oscar.demo.mybatis.anno.model.City;
 
 /**
@@ -11,6 +12,7 @@ import org.oscar.demo.mybatis.anno.model.City;
  * Create Date: 15/11/16
  * Version: 1.0-SNAPSHOT
  */
+@MyBatis
 public interface MapperScannerMapper {
 
     @Select("select * from city where state = #{state}")

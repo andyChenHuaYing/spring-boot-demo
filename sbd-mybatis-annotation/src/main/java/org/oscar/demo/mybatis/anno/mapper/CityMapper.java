@@ -1,9 +1,12 @@
 package org.oscar.demo.mybatis.anno.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.oscar.demo.mybatis.anno.config.MyBatis;
 import org.oscar.demo.mybatis.anno.model.City;
+
+import java.util.List;
 
 /**
  * Description:
@@ -12,9 +15,15 @@ import org.oscar.demo.mybatis.anno.model.City;
  * Create Date: 15/11/16
  * Version: 1.0-SNAPSHOT
  */
-@Mapper
+@MyBatis
 public interface CityMapper {
 
     @Select("select * from city where state = #{state}")
-    City findCityByState(@Param("state") String state);
+    City findAllCityByState(@Param("state") String state);
+
+    @Select("select * from city")
+    List<City> findAllCity();
+
+    @Insert("insert into city(name, state, country) values (#{name},#{state},#{country})")
+    int insert(City city);
 }
